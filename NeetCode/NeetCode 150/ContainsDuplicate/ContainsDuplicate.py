@@ -1,10 +1,8 @@
 class Solution:
     def hasDuplicate(self, nums: List[int]) -> bool:
-        hashmap = set() # Creates HashSet
-        for i in nums:
-            if i in hashmap:
+        s=set() # initializes the set. this could alternatively just be an array[], and change the add() method to append()
+        for n in nums: 
+            if n in s: # if a number, n, has already been seen before (indicated by it existing in the set)
                 return True
-            # If does not exist in map (meaning not a duplicate)
-            hashmap.add(i)
-        # If it reaches here, it means that no duplicate was found in List 'nums'
+            s.add(n) # if a number is not already in the set, add it to the set. 
         return False
